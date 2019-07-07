@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import SeasonDisplay from "./SeasonDisplay";
+import Spinner from "./Spinner";
 
 class App extends React.Component {
   // constructor function
@@ -22,12 +23,8 @@ class App extends React.Component {
     );
   }
 
-  // componentDidUpdate() {
-  //   console.log("My component was just updated.");
-  // }
-
-  // React requires a render() method
-  render() {
+  // conditional logic inside helper function
+  renderContent() {
     if (this.state.errorMessage && !this.state.lat) {
       return <div>Error: {this.state.errorMessage}</div>;
     }
@@ -36,7 +33,15 @@ class App extends React.Component {
       return <SeasonDisplay lat={this.state.lat} />;
     }
 
-    return <div>Loading...</div>;
+    return <Spinner message="Please accept location request" />;
+  }
+
+  // React requires a render() method
+  render() {
+    {
+      // call the helper function containing conditional logic
+      return this.renderContent();
+    }
   }
 }
 
