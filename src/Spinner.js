@@ -1,5 +1,6 @@
 import React from "react";
 
+// React functional component
 const Spinner = props => {
   return (
     <div className="ui active dimmer">
@@ -8,6 +9,7 @@ const Spinner = props => {
   );
 };
 
+// set default props
 Spinner.defaultProps = {
   message: "Loading..."
 };

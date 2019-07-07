@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import SeasonDisplay from "./SeasonDisplay";
 import Spinner from "./Spinner";
 
+// React class component
 class App extends React.Component {
-  // constructor function
   // constructor(props) {
   //   super(props);
 
